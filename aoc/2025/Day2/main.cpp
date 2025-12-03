@@ -45,7 +45,8 @@ void solve() {
     string t;
     char del = ',';
 
-    long long res = 0;
+    long long res1 = 0;
+    long long res2 = 0;
     while (getline(ss, t, del)) {
         string first_str = t.substr(0, t.find("-"));
         string second_str = t.substr(t.find("-") + 1, t.size() - 1);
@@ -54,13 +55,17 @@ void solve() {
         long long second = stoll(second_str);
 
         for (long long i = first; i <= second; i ++) {
+            if (!valid(to_string(i))) {
+                res1 += i;
+            }
             if (!valid2(to_string(i))) {
-                res += i;
+                res2 += i;
             }
         }
     }
 
-    cout << res;
+    cout << "Part 1: " << res1 << endl;
+    cout << "Part 2: " << res2 << endl;
 }
 
 int main() {
