@@ -1,9 +1,6 @@
 #include <bits/stdc++.h>
-#include <vector>
 
 using namespace std;
-
-
 
 void solve() {
     int n;
